@@ -59,17 +59,17 @@ public class Vista extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		float touchX = event.getX();
-		float touchY = event.getY();
+		float x0 = event.getX();
+		float y0 = event.getY();
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			trazo.moveTo(touchX, touchY);
+			trazo.moveTo(x0, y0);
 			break;
 		case MotionEvent.ACTION_MOVE:
-			trazo.lineTo(touchX, touchY);
+			trazo.lineTo(x0, y0);
 			break;
 		case MotionEvent.ACTION_UP:
-			trazo.lineTo(touchX, touchY);
+			trazo.lineTo(x0, y0);
 			lienzo.drawPath(trazo, pincel);
 			trazo.reset();
 			break;
@@ -78,7 +78,6 @@ public class Vista extends View {
 		}
 		invalidate();
 		return true;
-
 	}
 
 	public void setColor(String newColor){
@@ -94,12 +93,6 @@ public class Vista extends View {
 		pincel.setStrokeWidth(tamPincel);
 	}
 
-	public void setLasttamPincel(float lastSize){
-		lasttamPincel=lastSize;
-	}
-	public float getLasttamPincel(){
-		return lasttamPincel;
-	}
 
 	public void setborrar(boolean isborrar){
 		borrar=isborrar;
@@ -107,7 +100,9 @@ public class Vista extends View {
             this.setColor("#FFFFFFFF");
             //pincel.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         }
-		else pincel.setXfermode(null);
+		else{
+            pincel.setXfermode(null);
+        }
 	}
 
 	public void startNew(){
