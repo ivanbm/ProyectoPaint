@@ -13,8 +13,9 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
-public class Vista extends View {
+public class Vista extends View implements ColorPickerDialog.OnColorChangedListener {
 
 	private Path trazo;
 	private Paint pincel, miCanvas;
@@ -23,6 +24,7 @@ public class Vista extends View {
 	private Bitmap mapaDeBits;
 	private float tamPincel, lasttamPincel;
 	private boolean borrar=false;
+    private Button btColor;
 
 	public Vista(Context context, AttributeSet attrs){
 		super(context, attrs);
@@ -105,8 +107,19 @@ public class Vista extends View {
         }
 	}
 
-	public void startNew(){
+	public void nuevo(){
 		lienzo.drawColor(0, PorterDuff.Mode.CLEAR);
 		invalidate();
 	}
+
+    @Override
+    public void colorChanged(int color) {
+        pincel.setColor(color);
+        //btColor.setBackgroundColor(color);
+    }
+
+    public void cambiarColor(){
+        ColorPickerDialog color = new ColorPickerDialog(getContext(),this,Color.BLACK);
+        color.show();
+    }
 }

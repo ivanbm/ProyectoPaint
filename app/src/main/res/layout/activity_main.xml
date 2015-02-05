@@ -150,26 +150,36 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
+            <Button
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btColor"
+                android:onClick="selColor"
+                android:layout_weight="0.2" />
+
             <ImageButton
                 android:id="@+id/btNuevo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/start_new"
-                android:src="@drawable/nuevo" />
+                android:src="@drawable/nuevo"
+                android:layout_weight="0.2" />
 
             <ImageButton
                 android:id="@+id/btBorrar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/erase"
-                android:src="@drawable/eraser" />
+                android:src="@drawable/eraser"
+                android:layout_weight="0.2" />
 
             <ImageButton
                 android:id="@+id/btGuardar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/save"
-                android:src="@drawable/guardar" />
+                android:src="@drawable/guardar"
+                android:layout_weight="0.2" />
         </LinearLayout>
     </LinearLayout>
 

@@ -62,50 +62,52 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	@Override
-	public void onClick(View view){
+	public void onClick(View view) {
 
-		if(view.getId()==R.id.btNuevo){
-			AlertDialog.Builder nuevoDibu = new AlertDialog.Builder(this);
-			nuevoDibu.setTitle("Nuevo dibujo");
-			nuevoDibu.setMessage("Se perderán los cambios si no han sido guardados ¿Continuar?");
-			nuevoDibu.setPositiveButton("Si", new DialogInterface.OnClickListener(){
-				public void onClick(DialogInterface dialog, int which){
-					vista.startNew();
-					dialog.dismiss();
-				}
-			});
-			nuevoDibu.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){
-				public void onClick(DialogInterface dialog, int which){
-					dialog.cancel();
-				}
-			});
-			nuevoDibu.show();
-		}
-		else if(view.getId()==R.id.btGuardar){
-			AlertDialog.Builder guardar = new AlertDialog.Builder(this);
-			guardar.setTitle("Guardar");
-			guardar.setMessage("¿Desea guardar los cambios?");
-			guardar.setPositiveButton("Si", new DialogInterface.OnClickListener(){
-				public void onClick(DialogInterface dialog, int which){
-					vista.setDrawingCacheEnabled(true);
-					MediaStore.Images.Media.insertImage(
-							getContentResolver(), vista.getDrawingCache(),
-							UUID.randomUUID().toString()+".png", "dibujo");
-					
-						Toast.makeText(getApplicationContext(), "Se ha guardado correctamente.", Toast.LENGTH_SHORT).show();
-					
-					vista.destroyDrawingCache();
-				}
-			});
-			guardar.setNegativeButton("No", new DialogInterface.OnClickListener(){
-				public void onClick(DialogInterface dialog, int which){
-					dialog.cancel();
-				}
-			});
-			guardar.show();
-		}else if(view.getId()==R.id.btBorrar){
+        if (view.getId() == R.id.btNuevo) {
+            AlertDialog.Builder nuevoDibu = new AlertDialog.Builder(this);
+            nuevoDibu.setTitle("Nuevo dibujo");
+            nuevoDibu.setMessage("Se perderán los cambios si no han sido guardados ¿Continuar?");
+            nuevoDibu.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    vista.nuevo();
+                    dialog.dismiss();
+                }
+            });
+            nuevoDibu.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            nuevoDibu.show();
+        } else if (view.getId() == R.id.btGuardar) {
+            AlertDialog.Builder guardar = new AlertDialog.Builder(this);
+            guardar.setTitle("Guardar");
+            guardar.setMessage("¿Desea guardar los cambios?");
+            guardar.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    vista.setDrawingCacheEnabled(true);
+                    MediaStore.Images.Media.insertImage(
+                            getContentResolver(), vista.getDrawingCache(),
+                            UUID.randomUUID().toString() + ".png", "dibujo");
+
+                    Toast.makeText(getApplicationContext(), "Se ha guardado correctamente.", Toast.LENGTH_SHORT).show();
+
+                    vista.destroyDrawingCache();
+                }
+            });
+            guardar.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            guardar.show();
+        } else if (view.getId() == R.id.btBorrar) {
             vista.setborrar(true);
         }
-	}
+    }
 
+    public void selColor(View v){
+        vista.cambiarColor();
+    }
 }
