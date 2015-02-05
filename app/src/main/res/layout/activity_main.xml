@@ -1,0 +1,176 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".MainActivity"
+    android:background="#FFFFFFFF">
+
+	<!-- Top Buttons -->
+
+    <!-- Custom View -->
+
+	<com.izv.android.proyectopaintfinal.Vista
+		android:id="@+id/lienzo"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_marginBottom="3dp"
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp"
+		android:layout_marginTop="3dp"
+		android:layout_weight="1"
+        android:text="e"
+        android:background="#FFFFFFFF" />
+
+	<!-- Color Palette -->
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="horizontal" >
+
+		<!-- Top Row -->
+
+        <!-- Bottom Row -->
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:id="@+id/colores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ff000000"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ff000000" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ff595853"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ff595853" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ff9c3d15"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ff9c3d15" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ffff0007"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ffff0007" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ffff5601"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ffff5601" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#FF0000FF"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#FF0000FF" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#fffeff01"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#fffeff01" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ff04c130"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ff04c130" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ffb640ff"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ffb640ff" />
+
+                <ImageButton
+                    android:layout_width="@dimen/large_brush"
+                    android:layout_height="@dimen/large_brush"
+                    android:layout_margin="2dp"
+                    android:background="#ff3899d1"
+                    android:contentDescription="@string/paint"
+                    android:onClick="colorSelect"
+                    android:tag="#ff3899d1" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btNuevo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/start_new"
+                android:src="@drawable/nuevo" />
+
+            <ImageButton
+                android:id="@+id/btBorrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/erase"
+                android:src="@drawable/eraser" />
+
+            <ImageButton
+                android:id="@+id/btGuardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/save"
+                android:src="@drawable/guardar" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
